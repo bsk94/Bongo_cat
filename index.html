@@ -3,9 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Drum kit</title>
   </head>
   <body>
-    <h1>Drum kit</h1>
+    <header class="container__title">
+      <h1 class="title__header">Drum kit</h1>
+    </header>
+    <div class="drum__btns">
+      <audio id="boom" src="./assets/sounds/cw-02_sounds_boom.wav"></audio>
+      <audio id="clap" src="./assets/sounds/cw-02_sounds_clap.wav"></audio>
+      <audio id="hihat" src="./assets/sounds/cw-02_sounds_hihat.wav"></audio>
+      <audio id="kick" src="./assets/sounds/cw-02_sounds_kick.wav"></audio>
+      <audio
+        id="openhat"
+        src="./assets/sounds/cw-02_sounds_openhat.wav"
+      ></audio>
+      <audio id="ride" src="./assets/sounds/cw-02_sounds_ride.wav"></audio>
+      <audio id="snare" src="./assets/sounds/cw-02_sounds_snare.wav"></audio>
+      <audio id="tink" src="./assets/sounds/cw-02_sounds_tink.wav"></audio>
+      <audio id="tom" src="./assets/sounds/cw-02_sounds_tom.wav"></audio>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="tomBtn">tom</label>
+      <button class="drum__button" id="tomBtn">Q</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="clapBtn">clap</label>
+      <button class="drum__button" id="clapBtn">W</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="hihatBtn">hihat</label>
+      <button class="drum__button" id="hihatBtn">E</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="kickBtn">kick</label>
+      <button class="drum__button" id="kickBtn">A</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="openhatBtn">openhat</label>
+      <button class="drum__button" id="openhatBtn">S</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="rideBtn">ride</label>
+      <button class="drum__button" id="rideBtn">D</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="snareBtn">snare</label>
+      <button class="drum__button" id="snareBtn">Z</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="tinkBtn">tink</label>
+      <button class="drum__button" id="tinkBtn">X</button>
+    </div>
+    <div class="drum__container">
+      <label class="drum__label" for="tomBtn">tom</label>
+      <button class="drum__button" id="tomBtn">C</button>
+    </div>
+
+    <footer></footer>
+    <script src="./app.js"></script>
   </body>
 </html>
