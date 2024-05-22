@@ -8,7 +8,7 @@ const snareSound = document.querySelector('#snare');
 const tinkSound = document.querySelector('#tink');
 const tomSound = document.querySelector('#tom');
 
-const allDrumButtons = document.querySelectorAll('.drum__button');
+const allDrumButtons = document.querySelectorAll('[data-sound]');
 
 const playSound = (sound) => {
   switch (sound) {
@@ -20,6 +20,7 @@ const playSound = (sound) => {
       clapSound.currentTime = 0;
       clapSound.play();
       break;
+
     case 'E':
       hihatSound.currentTime = 0;
       hihatSound.play();
@@ -53,12 +54,25 @@ const playSound = (sound) => {
   }
 };
 
+console.log(allDrumButtons, 'ggg');
+
+let buttons = {};
+
 allDrumButtons.forEach((soundBtn) => {
+  buttons[soundBtn.dataset.sound] = soundBtn;
+
   soundBtn.addEventListener('click', () => {
-    playSound(soundBtn.innerHTML);
+    playSound(soundBtn.dataset.sound);
   });
 });
 
 document.body.addEventListener('keypress', (e) => {
   playSound(e.key.toUpperCase());
+
+  let oneButton = buttons[e.key.toUpperCase()];
+  oneButton.classList.add('active');
+
+  setTimeout(() => {
+    oneButton.classList.remove('active');
+  }, 150);
 });

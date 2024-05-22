@@ -1,5 +1,70 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Comic';
+  src: url(/assets/fonts/SnackerComic.ttf);
+}
+
+@font-face {
+  font-family: 'CosmicSans';
+  src: url(/assets/fonts/Ldfcomicsansbold.ttf);
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-size: 62.5%;
+}
+
+.title__header {
+  display: flex;
+  justify-content: center;
+}
+
+.title__header {
+  font-family: Comic;
+  font-size: 8rem;
+  font-weight: 200;
+}
+
+.drum__container {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.drum__btns {
+  font-family: CosmicSans;
+  cursor: pointer;
+  border: 2.5px solid black;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 0.1rem;
+  width: 4rem;
+  height: 4.5rem;
+  transition: all 0.15s;
+}
+
+.drum__btns:active,
+.drum__btns.active {
+  transform: scale(1.1);
+  border-color: #e56b6f;
+  text-shadow: 0 0 3px #e56b6f;
+}
+
+@media (max-width: 650px) {
+  .drum__btns {
+    transform: scale(var(--ggs, 0.8));
+  }
+}
+
+.drum__btns p {
+  font-family: 'Segoe UI';
+  font-size: 0.9rem;
 }

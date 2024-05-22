@@ -7,10 +7,9 @@
     <title>Drum kit</title>
   </head>
   <body>
-    <header class="container__title">
-      <h1 class="title__header">Drum kit</h1>
-    </header>
-    <div class="drum__btns">
+    <h1 class="title__header">DRUM KIT</h1>
+
+    <div>
       <audio id="boom" src="./assets/sounds/cw-02_sounds_boom.wav"></audio>
       <audio id="clap" src="./assets/sounds/cw-02_sounds_clap.wav"></audio>
       <audio id="hihat" src="./assets/sounds/cw-02_sounds_hihat.wav"></audio>
@@ -24,41 +23,55 @@
       <audio id="tink" src="./assets/sounds/cw-02_sounds_tink.wav"></audio>
       <audio id="tom" src="./assets/sounds/cw-02_sounds_tom.wav"></audio>
     </div>
+
     <div class="drum__container">
-      <label class="drum__label" for="tomBtn">tom</label>
-      <button class="drum__button" id="tomBtn">Q</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="clapBtn">clap</label>
-      <button class="drum__button" id="clapBtn">W</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="hihatBtn">hihat</label>
-      <button class="drum__button" id="hihatBtn">E</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="kickBtn">kick</label>
-      <button class="drum__button" id="kickBtn">A</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="openhatBtn">openhat</label>
-      <button class="drum__button" id="openhatBtn">S</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="rideBtn">ride</label>
-      <button class="drum__button" id="rideBtn">D</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="snareBtn">snare</label>
-      <button class="drum__button" id="snareBtn">Z</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="tinkBtn">tink</label>
-      <button class="drum__button" id="tinkBtn">X</button>
-    </div>
-    <div class="drum__container">
-      <label class="drum__label" for="tomBtn">tom</label>
-      <button class="drum__button" id="tomBtn">C</button>
+      <div>
+        <button id="boomBtn" data-sound="Q" class="drum__btns">
+          <h2 class="drum__header">Q</h2>
+          <p class="drum__label">boom</p>
+        </button>
+
+        <button id="clapBtn" data-sound="W" class="drum__btns">
+          <h2 class="drum__header">W</h2>
+          <p class="drum__label">clap</p>
+        </button>
+
+        <button id="hihatBtn" data-sound="E" class="drum__btns">
+          <h2 class="drum__header">E</h2>
+          <p class="drum__label">hihat</p>
+        </button>
+
+        <button id="kickBtn" data-sound="A" class="drum__btns">
+          <h2 class="drum__header">A</h2>
+          <p class="drum__label">kick</p>
+        </button>
+
+        <button id="openhatBtn" data-sound="S" class="drum__btns">
+          <h2 class="drum__header">S</h2>
+          <p class="drum__label">openhat</p>
+        </button>
+      </div>
+      <div>
+        <button id="rideBtn" data-sound="D" class="drum__btns">
+          <h2 class="drum__header">D</h2>
+          <p class="drum__label">ride</p>
+        </button>
+
+        <button id="snareBtn" data-sound="Z" class="drum__btns">
+          <h2 class="drum__header">Z</h2>
+          <p class="drum__label">snare</p>
+        </button>
+
+        <button id="tinkBtn" data-sound="X" class="drum__btns">
+          <h2 class="drum__header">X</h2>
+          <p class="drum__label">tink</p>
+        </button>
+
+        <button id="tomBtn" data-sound="C" class="drum__btns">
+          <h2 class="drum__header">C</h2>
+          <p class="drum__label">tom</p>
+        </button>
+      </div>
     </div>
 
     <footer></footer>
