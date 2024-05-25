@@ -10,6 +10,8 @@ const tomSound = document.querySelector('#tom');
 
 const allDrumButtons = document.querySelectorAll('[data-sound]');
 
+document.querySelector('.cat__img').src = '/assets/images/cat_up.png';
+
 const playSound = (sound) => {
   switch (sound) {
     case 'Q':
@@ -60,9 +62,32 @@ let buttons = {};
 
 allDrumButtons.forEach((soundBtn) => {
   buttons[soundBtn.dataset.sound] = soundBtn;
-
   soundBtn.addEventListener('click', () => {
     playSound(soundBtn.dataset.sound);
+    // -------- cat animation---------
+    if (
+      soundBtn.dataset.sound === 'Q' ||
+      soundBtn.dataset.sound === 'A' ||
+      soundBtn.dataset.sound === 'Z'
+    ) {
+      document.querySelector('.cat__img').src = '/assets/images/cat_left.png';
+    } else if (
+      soundBtn.dataset.sound === 'W' ||
+      soundBtn.dataset.sound === 'S' ||
+      soundBtn.dataset.sound === 'X'
+    ) {
+      document.querySelector('.cat__img').src = '/assets/images/cat_right.png';
+    } else if (
+      soundBtn.dataset.sound === 'E' ||
+      soundBtn.dataset.sound === 'D' ||
+      soundBtn.dataset.sound === 'C'
+    ) {
+      document.querySelector('.cat__img').src = '/assets/images/cat_down.png';
+    }
+
+    setTimeout(() => {
+      document.querySelector('.cat__img').src = '/assets/images/cat_up.png';
+    }, 150);
   });
 });
 
@@ -72,7 +97,17 @@ document.body.addEventListener('keypress', (e) => {
   let oneButton = buttons[e.key.toUpperCase()];
   oneButton.classList.add('active');
 
+  // -------- cat animation---------
+  if (e.key === 'q' || e.key === 'a' || e.key === 'z') {
+    document.querySelector('.cat__img').src = '/assets/images/cat_left.png';
+  } else if (e.key === 'w' || e.key === 's' || e.key === 'x') {
+    document.querySelector('.cat__img').src = '/assets/images/cat_right.png';
+  } else if (e.key === 'e' || e.key === 'd' || e.key === 'c') {
+    document.querySelector('.cat__img').src = '/assets/images/cat_down.png';
+  }
+
   setTimeout(() => {
     oneButton.classList.remove('active');
+    document.querySelector('.cat__img').src = '/assets/images/cat_up.png';
   }, 150);
 });
