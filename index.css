@@ -42,7 +42,10 @@ body {
 .drum__btns {
   font-family: CosmicSans;
   cursor: pointer;
-  border: 2.5px solid black;
+  border: none;
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
   border-radius: 5px;
   font-size: 1.2rem;
   padding: 0.1rem;
@@ -54,8 +57,12 @@ body {
 .drum__btns:active,
 .drum__btns.active {
   transform: scale(1.1);
+  border: 3px solid #e56b6f;
   border-color: #e56b6f;
   text-shadow: 0 0 3px #e56b6f;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 @media (max-width: 650px) {
@@ -78,4 +85,105 @@ body {
   margin: 4rem 0 8rem 0;
   max-width: 100%;
   height: auto;
+}
+
+.record__btn {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 1);
+  margin: 0.2rem;
+}
+
+.channel__container {
+  display: flex;
+  margin: 3rem 0rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 650px) {
+  .record__btn {
+    transform: scale(0.8);
+    margin: 0rem;
+  }
+}
+
+.record__btn-innerCircle {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.record__btn-innerSquare {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 3%;
+  background-color: black;
+}
+
+.record__btn-innerClear {
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.record__btn-innerClear::before,
+.record__btn-innerClear::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: black;
+}
+
+.record__btn-innerClear::before {
+  transform: rotate(45deg);
+}
+
+.record__btn-innerClear::after {
+  transform: rotate(-45deg);
+}
+
+.record__btn-innerPlay {
+  position: absolute;
+}
+
+.record__btn-innerPlay::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 1.5px;
+  left: 3px;
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent black;
+}
+
+.progressBar__conatiner {
+  background-color: black;
+  border-radius: 5px;
+  height: 0.3rem;
+  width: 70%;
+  margin: 0rem 1rem;
+}
+
+.progress {
+  background-color: #e56b6f;
+  border-radius: 5px;
+  height: 100%;
+  width: 50%;
+  transition: width 0.1s linear;
 }
