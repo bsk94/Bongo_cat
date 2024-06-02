@@ -10,9 +10,58 @@ const tomSound = document.querySelector('#tom');
 
 const allDrumButtons = document.querySelectorAll('[data-sound]');
 
+const recordBtn = document.getElementById('1');
+const stopBtn = document.getElementById('2');
+const clearBtn = document.getElementById('3');
+const playBtn = document.getElementById('4');
+
 document.querySelector('.cat__img').src = '/assets/images/cat_up.png';
 
+let channel = [];
+let isRecording = false;
+let recordingStartTime;
+
+recordBtn.addEventListener('click', () => {
+  isRecording = true;
+
+  if (channel.length === 0) {
+    recordingStartTime = +new Date();
+  }
+  console.log(isRecording, 'hhhh');
+});
+
+stopBtn.addEventListener('click', () => {
+  isRecording = false;
+  console.log(isRecording, 'hhhh');
+});
+
+clearBtn.addEventListener('click', () => {
+  channel = [];
+  console.log(isRecording, 'hhhh');
+});
+
+playBtn.addEventListener('click', () => {
+  playSong();
+});
+
+const playSong = () => {
+  if (channel.length === 0) return;
+
+  channel.forEach((note) => {
+    setTimeout(() => {
+      playSound(note.key);
+    }, note.startTime);
+  });
+};
+
 const playSound = (sound) => {
+  if (isRecording === true) {
+    channel.push({ key: sound, startTime: +new Date() - recordingStartTime });
+
+    console.log(sound, 'notesq');
+
+    console.log('ffff', channel);
+  }
   switch (sound) {
     case 'Q':
       boomSound.currentTime = 0;
@@ -56,14 +105,13 @@ const playSound = (sound) => {
   }
 };
 
-console.log(allDrumButtons, 'ggg');
-
 let buttons = {};
 
 allDrumButtons.forEach((soundBtn) => {
   buttons[soundBtn.dataset.sound] = soundBtn;
   soundBtn.addEventListener('click', () => {
     playSound(soundBtn.dataset.sound);
+
     // -------- cat animation---------
     if (
       soundBtn.dataset.sound === 'Q' ||

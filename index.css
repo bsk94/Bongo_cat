@@ -52,6 +52,7 @@ body {
   width: 4rem;
   height: 4.5rem;
   transition: all 0.15s;
+  outline: none;
 }
 
 .drum__btns:active,
@@ -87,7 +88,7 @@ body {
   height: auto;
 }
 
-.record__btn {
+.channel__btn {
   width: 2rem;
   height: 2rem;
   border: none;
@@ -111,7 +112,7 @@ body {
 }
 
 @media (max-width: 650px) {
-  .record__btn {
+  .channel__btn {
     transform: scale(0.8);
     margin: 0rem;
   }
@@ -132,8 +133,8 @@ body {
 }
 
 .record__btn-innerClear {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
   position: relative;
   display: flex;
   flex-direction: column;
