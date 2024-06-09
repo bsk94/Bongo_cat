@@ -20,14 +20,10 @@ document.querySelector('.cat__img').src = '/assets/images/cat_up.png';
 let channel = [];
 let isRecording = false;
 let recordingStartTime;
+let animationDuration;
 
 recordBtn.addEventListener('click', () => {
   isRecording = true;
-
-  if (channel.length === 0) {
-    recordingStartTime = +new Date();
-  }
-  console.log(isRecording, 'hhhh');
 });
 
 stopBtn.addEventListener('click', () => {
@@ -44,6 +40,28 @@ playBtn.addEventListener('click', () => {
   playSong();
 });
 
+document.getElementById('4').addEventListener('click', move);
+
+function move() {
+  const start = [...channel][0].startTime;
+  const songLength = [...channel].pop().songDuration;
+  const stop = [...channel].pop().startTime;
+  animationDuration = (stop + songLength) / 1000;
+
+  var elem = document.getElementById('myBar');
+  var width = 0;
+  var duration = animationDuration;
+  var id = setInterval(frame, duration * 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+    }
+  }
+}
+
 const playSong = () => {
   if (channel.length === 0) return;
 
@@ -56,49 +74,58 @@ const playSong = () => {
 
 const playSound = (sound) => {
   if (isRecording === true) {
+    if (channel.length === 0) {
+      recordingStartTime = +new Date();
+    }
+    console.log(isRecording, 'hhhh');
     channel.push({ key: sound, startTime: +new Date() - recordingStartTime });
-
-    console.log(sound, 'notesq');
-
-    console.log('ffff', channel);
   }
   switch (sound) {
     case 'Q':
       boomSound.currentTime = 0;
       boomSound.play();
+      channel[channel.length - 1].songDuration = boomSound.duration;
       break;
     case 'W':
       clapSound.currentTime = 0;
       clapSound.play();
+      channel[channel.length - 1].songDuration = clapSound.duration;
       break;
 
     case 'E':
       hihatSound.currentTime = 0;
       hihatSound.play();
+      channel[channel.length - 1].songDuration = hihatSound.duration;
       break;
     case 'A':
       kickSound.currentTime = 0;
       kickSound.play();
+      channel[channel.length - 1].songDuration = kickSound.duration;
       break;
     case 'S':
       openhatSound.currentTime = 0;
       openhatSound.play();
+      channel[channel.length - 1].songDuration = openhatSound.duration;
       break;
     case 'D':
       rideSound.currentTime = 0;
       rideSound.play();
+      channel[channel.length - 1].songDuration = rideSound.duration;
       break;
     case 'Z':
       snareSound.currentTime = 0;
       snareSound.play();
+      channel[channel.length - 1].songDuration = snareSound.duration;
       break;
     case 'X':
       tinkSound.currentTime = 0;
       tinkSound.play();
+      channel[channel.length - 1].songDuration = tinkSound.duration;
       break;
     case 'C':
       tomSound.currentTime = 0;
       tomSound.play();
+      channel[channel.length - 1].songDuration = tomSound.duration;
       break;
     default:
       '';

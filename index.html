@@ -10,18 +10,51 @@
     <h1 class="title__header">DRUM KIT</h1>
 
     <div>
-      <audio id="boom" src="./assets/sounds/cw-02_sounds_boom.wav"></audio>
-      <audio id="clap" src="./assets/sounds/cw-02_sounds_clap.wav"></audio>
-      <audio id="hihat" src="./assets/sounds/cw-02_sounds_hihat.wav"></audio>
-      <audio id="kick" src="./assets/sounds/cw-02_sounds_kick.wav"></audio>
+      <audio
+        id="boom"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_boom.wav"
+      ></audio>
+      <audio
+        id="clap"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_clap.wav"
+      ></audio>
+      <audio
+        id="hihat"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_hihat.wav"
+      ></audio>
+      <audio
+        id="kick"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_kick.wav"
+      ></audio>
       <audio
         id="openhat"
+        preload="metadata"
         src="./assets/sounds/cw-02_sounds_openhat.wav"
       ></audio>
-      <audio id="ride" src="./assets/sounds/cw-02_sounds_ride.wav"></audio>
-      <audio id="snare" src="./assets/sounds/cw-02_sounds_snare.wav"></audio>
-      <audio id="tink" src="./assets/sounds/cw-02_sounds_tink.wav"></audio>
-      <audio id="tom" src="./assets/sounds/cw-02_sounds_tom.wav"></audio>
+      <audio
+        id="ride"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_ride.wav"
+      ></audio>
+      <audio
+        id="snare"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_snare.wav"
+      ></audio>
+      <audio
+        id="tink"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_tink.wav"
+      ></audio>
+      <audio
+        id="tom"
+        preload="metadata"
+        src="./assets/sounds/cw-02_sounds_tom.wav"
+      ></audio>
     </div>
 
     <div class="drum__container">
@@ -86,14 +119,15 @@
         <button class="channel__btn" id="2">
           <span class="record__btn-innerSquare"></span>
         </button>
-        <button class="channel__btn" id="3">
-          <span class="record__btn-innerClear"></span>
-        </button>
         <button class="channel__btn" id="4">
           <span class="record__btn-innerPlay"></span>
         </button>
-        <div class="progressBar__conatiner">
-          <span class="progress"></span>
+        <button class="channel__btn" id="3">
+          <span class="record__btn-innerClear"></span>
+        </button>
+
+        <div id="myProgress">
+          <div id="myBar"></div>
         </div>
       </div>
     </footer>
