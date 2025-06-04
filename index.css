@@ -17,7 +17,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 10vh;
   overflow: hidden;
   font-size: 62.5%;
 }
@@ -173,10 +173,6 @@ body {
   border-color: transparent transparent transparent black;
 }
 
-/* :root {
-  --song-animation-duration: 0ms;
-} */
-
 #myProgress {
   height: 100%;
   width: 20rem;
@@ -187,5 +183,5 @@ body {
 #myBar {
   width: 0%;
   height: 5px;
-  background-color: #e4c465;
+  background-color: #faa5ad;
 }
